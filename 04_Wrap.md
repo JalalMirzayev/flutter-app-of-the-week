@@ -1,6 +1,6 @@
 Widget works similar like Row and Column but has additional logic to prevent children from lying outside of visible screen space.
 
-<img src="/images/04_Wrap.png" alt="Wrap" height="100"/>
+<img src="/images/04_Wrap.png" alt="Wrap" height="400"/>
 
 ```dart
 Wrap(
