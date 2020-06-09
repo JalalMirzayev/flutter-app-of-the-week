@@ -13,7 +13,9 @@ Row(
 ```
 
 <img src="/images/03_Expanded.png" alt="With and without Expanded" height="100"/>
+
 With Expanded (without flex)
+
 ```dart
 Row(
   children: [
@@ -30,6 +32,7 @@ Row(
 ```
 
 With Expanded (with flex)
+
 ```dart
 Row(
   children: [
