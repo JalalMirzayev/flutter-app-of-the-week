@@ -1,10 +1,11 @@
-This repository is meant to be a reference for Flutter Widgets presented on YouTube in the [Flutter Widget of the Week](https://www.youtube.com/playlist?list=PLjxrf2q8roU23XGwz3Km7sQZFTdB996iG) series.
+This repository is a reference for Flutter Widgets presented on YouTube in the [Flutter Widget of the Week](https://www.youtube.com/playlist?list=PLjxrf2q8roU23XGwz3Km7sQZFTdB996iG) series.
 
 # Table of Contents
 1. [SafeArea](#safearea)
 2. [Expanded](#expanded)
 3. [Wrap](#wrap)
 4. [AnimatedContainer](#AnimatedContainer)
+5. [Opacity](#Opacity)
 
 # SafeArea
 
@@ -149,5 +150,47 @@ setState(() {
 )
 ```
 
+# Opacity
 
+Analog behaviour to hidden from iOS and invisible from Android. Used when you want to remove the widget from the UI but
+still want to occupy the same space as with the visible widget. 
 
+```dart
+final widgets = [
+  MyWidget(Color.green),
+  Opacity(
+    opacity: 0.0,
+    child: MyWidget(Color.blue),
+  ),
+  MyWidget(Color.yellow),
+];
+```
+
+Can also be used for blending widgets inside of stack.
+
+```dart
+Stack(
+  children: [
+    MyImageWidget(),
+    Opacity(
+      opacity: 0.25,
+      child: MyGradientWidget(),
+    ) 
+  ],
+)
+```
+
+Can also be combined with Animations using AnimatedOpacity.
+
+```dart
+Stack(
+  children: [
+    MyImageWidget(),
+    AnimatedOpacity(
+      duration: _myDuration, // animation duration
+      opacity: _myOpacity, // state to change
+      child: MyGradientWidget(),
+    ),  
+  ],
+)
+```
