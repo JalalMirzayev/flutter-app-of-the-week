@@ -4,6 +4,7 @@ This repository is meant to be a reference for Flutter Widgets presented on YouT
 1. [SafeArea](#safearea)
 2. [Expanded](#expanded)
 3. [Wrap](#wrap)
+4. [AnimatedContainer](#AnimatedContainer)
 
 # SafeArea
 
@@ -123,3 +124,30 @@ Wrap(
   ],
 )
 ```
+
+# AnimatedContainer
+
+Helps to animate your widgets by animating the widget state transitions.
+You can animate colors, borders, border radii, background images, shadows,
+gradients, shapes, padding, width, height, alignement, fransforms, and many more.
+```dart
+@override
+Widget build(BuildContext context) {
+  return AnimatedContainer(
+    color: _color, // (0xFF00BB00)
+    duration: _myDuration, // for controlling duration of animation
+    curve: Curves.bounceIn, // add specific curves
+    child: SomeOtherWidget(),
+  );
+}
+```
+
+```dart
+setState(() {
+  _color = Color(0xFF0000FF);
+}
+)
+```
+
+
+
