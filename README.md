@@ -2,15 +2,8 @@ This repository is meant to be a reference for Flutter Widgets presented on YouT
 
 # Table of Contents
 1. [SafeArea](#safearea)
-2. [Example2](#example2)
-3. [Third Example](#third-example)
-4. [Fourth Example](#fourth-examplehttpwwwfourthexamplecom)
-
-
-## Example
-## Example2
-## Third Example
-## [Fourth Example](http://www.fourthexample.com) 
+2. [Expanded](#expanded)
+3. [Wrap](#wrap)
 
 # SafeArea
 
@@ -56,7 +49,7 @@ Widget build(BuildContext context) {
 }
 ```
 
-# 02. Expanded
+# Expanded
 
 This widget helps to prevent your widgets to disappear in non visible sections.
 
@@ -110,7 +103,7 @@ Row(
 )
 ```
 
-# 03. Wrap
+# Wrap
 
 Widget works similar like Row and Column but has additional logic to prevent children from lying outside of visible screen space.
 
