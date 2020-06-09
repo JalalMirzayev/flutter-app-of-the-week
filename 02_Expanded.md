@@ -12,7 +12,7 @@ Row(
 )
 ```
 
-<img src="/images/03_Expanded.png" alt="With and without Expanded" height="100"/>
+<img src="/images/02_Expanded.png" alt="With and without Expanded" height="100"/>
 
 With Expanded (without flex)
 
