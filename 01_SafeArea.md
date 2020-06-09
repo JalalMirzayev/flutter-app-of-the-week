@@ -1,6 +1,6 @@
 This widget helps to prevent your widgets to disappear in non visible sections.
 
-<img src="/images/02_SafeArea.png" alt="With and without SafeArea" height="400"/>
+<img src="/images/01_SafeArea.png" alt="With and without SafeArea" height="400"/>
 
 ```dart
 ListView(
