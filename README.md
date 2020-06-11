@@ -6,6 +6,10 @@ This repository is a reference for Flutter Widgets presented on YouTube in the [
 3. [Wrap](#wrap)
 4. [AnimatedContainer](#AnimatedContainer)
 5. [Opacity](#Opacity)
+6. [FutureBuilder](#FutureBuilder)
+7. [FadeTransition](#FadeTransition)
+8. [FloatingActionButton](#FloatingActionButton)
+9. [PageView](#PageView)
 
 # SafeArea
 
@@ -194,3 +198,124 @@ Stack(
   ],
 )
 ```
+
+# FutureBuilder
+Helps to implement features which need time for execution until changes in the app can be updated.
+
+```dart
+FutureBuilder(
+  future: http.get('http://awesome.data'),
+  builder: (context, snapshot) {
+      // Check connection state and render placeholder during processing time.
+      // Possible other states are ConnectionState.none, ConnectionState.waiting,
+      // ConnectionState.active and ConnectionState.done.
+      if (snapshot.connectionState == ConnectionState.done) {
+        if (snaphot.hasError) {
+          return SomethingWentWrong();
+        } 
+        return AwesomeData(snapshot.data);
+      } else {
+        return CircularProgressIndicator();
+      } 
+  }
+)
+```
+
+# FadeTransition
+
+The Flutter SDK provides simple transitions. One example is the FadeTransition widget.
+
+```dart
+// Create the AnimationController.
+final controller = AnimationController(
+  vsync: this,
+  duration: Duration(seconds: 2),
+);
+// Create the animation.
+final animation = Tween(
+  begin: 0.0,
+  end: 1.0,
+).animate(controller);
+
+// Start the animation.
+controller.forward();
+
+// It is a good idea to put this into a stateful widget.
+FadeTransition(
+  opacity: animation,
+  child: Text(widget.text));
+```
+
+# FloatingActionButton
+
+Positioning the FloatingActionButton (FAB) in a bottomNavigationBar can sometime be challenging. 
+
+```dart
+Scaffold(
+  floatingActionButton: FloatingActionButton(
+    child: Icon(Icons.add),
+    onPressed: () {print('I was pressed!')},
+  ),
+  bottomNavigationBar: BottomAppBar(
+    color: Colors.yellow,
+    child: Container(height: 50.0),
+  ),
+  // Set the position.
+  // Possible positions are: centerDocked, endDocked
+  floatingActionButtonLocation:
+    FloatingActionButtonLocation.endDocked,
+);
+```
+
+# PageView
+
+With this widget you can provide the user the possibility to swipe between different pages.
+
+```dart
+final Controller = PageControler(
+  initialPage: 1,
+);
+
+// Create the PageView.
+final pageView = PageView(
+  controller: controller,
+  scrollDirection: Axis.vertical,
+  children: [
+    MyPage1Widget(),
+    MyPage2Widget(),
+    MyPage3Widget(),
+  ],
+);
+```
+
+# Table
+
+Similar to Grid but not scrollable and embedded widgets with different sizes.
+
+```dart
+Table(
+  // Determine Vertical Alignment.
+  // Possible alignments: top, middle, bottom.
+  defaultVerticalAlignment: TableCellVerticalAlignment.top,
+  border: TableBorder.all(),
+  defaultColumnWidth: FractionColumnWidth(.25),
+  children: [
+    TableRow(
+      children: [
+        Widewidget(),
+        MediumWidget(),
+        MediumWidget(),
+      ],
+    ),
+    TableRow(
+      children: [
+        MediumWidget(),
+        NarrowWidget(),
+        MediumWidget(),
+      ],
+    ),
+  ],
+);
+```
+
+
