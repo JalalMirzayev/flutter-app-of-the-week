@@ -22,6 +22,7 @@ class DogApp extends StatelessWidget {
           body: Center(
             child: Column(
               children: [
+                // This is position CODE01.
                 DecoratedBox(
                     decoration: BoxDecoration(color: Colors.lightBlueAccent),
                     child: Padding(
@@ -31,6 +32,7 @@ class DogApp extends StatelessWidget {
                 SizedBox(
                   height: 8.0,
                 ),
+                // This is position CODE02.
                 DogName(name: 'Nico'),
               ],
             ),
@@ -39,6 +41,7 @@ class DogApp extends StatelessWidget {
   }
 }
 
+// This is position CODE03.
 class DogName extends StatelessWidget {
   final String name;
   
