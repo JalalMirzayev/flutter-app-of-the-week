@@ -60,3 +60,48 @@ class DogName extends StatelessWidget {
   }
 }
 ```
+
+# Stateful Widgets
+
+```dart
+import 'package:flutter/material.dart';
+
+class ItemCount extends StatelessWidget {
+  final String name;
+  final int count;
+
+  const ItemCount({@required this.name, @required this.count})
+      : assert(name != null),
+        assert(count != null);
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      child: Text('My name is ${this.name} and the count is ${this.count}.'),
+    );
+  }
+}
+
+class ItemCounter extends StatefulWidget {
+  final String name;
+
+  const ItemCounter({this.name});
+
+  @override
+  _ItemCounterState createState() => _ItemCounterState();
+}
+
+class _ItemCounterState extends State<ItemCounter> {
+  int count = 0;
+  @override
+  Widget build(BuildContext context) {
+    return GestureDetector(
+        onTap: () {
+          setState(() {
+            count++;
+          });
+        },
+        child: Text('${widget.name}: $count'));
+  }
+}
+```
